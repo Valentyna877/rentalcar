@@ -1,0 +1,106 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.imageWrapper {
+    position: relative;
+    width: 100%;
+    height: 268px;
+    border-radius: 14px;
+    overflow: hidden;
+}
+
+.carImage {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    margin-top: 16px;
+    margin-bottom: 28px;
+}
+
+.topRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+    gap: 8px;
+}
+
+.title {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.25;
+}
+
+.model {
+    color: var(--light-blue);
+}
+
+.price {
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.meta {
+    font-size: 12px;
+    line-height: 1.33;
+    color: var(--gray);
+}
+
+.favoriteBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    border: none;
+    background: transparent;
+}
+
+.iconFavorite {
+    fill: var(--white);
+    width: 16px;
+    height: 16px;
+    transition: fill 250ms ease;
+}
+
+.favoriteBtn:hover .iconFavorite {
+    stroke: var(--light-blue);
+    transform: scale(1.2);
+}
+
+.activeFavorite {
+    fill: var(--light-blue);
+}
+
+.favoriteBtn:hover .activeFavorite {
+    fill: var(--dark-blue);
+    transform: scale(1.2);
+}
+
+.button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    padding: 12px 0;
+    text-align: center;
+    font-weight: 600;
+    font-size: 16px;
+    background: var(--light-blue);
+    color: var(--white);
+}
+
+.button:hover,
+.button:focus {
+    background-color: var(--dark-blue);
+}

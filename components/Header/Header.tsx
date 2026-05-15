@@ -17,9 +17,12 @@ useEffect(() => {
   }
 }, [menuOpen]);
 
-    
-    const isActive = (path: string) =>
-    pathname === path || pathname.startsWith(path);
+    const isActive = (path: string) => {
+    if (path === "/") {
+    return pathname === "/";
+  }
+  return pathname.startsWith(path);
+};
 
   return (
     <header className={css.header}>

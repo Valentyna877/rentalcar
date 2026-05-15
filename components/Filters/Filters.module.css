@@ -1,0 +1,175 @@
+.form {
+    width: 100%;
+    margin: 48px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.filterGroup {
+    display: flex;
+    flex-shrink: 0;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+}
+
+.filterMileage {
+    width: 320px;
+}
+
+.mileageWrap {
+    display: flex;
+    width: 100%;
+}
+
+.label {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.33;
+    color: var(--gray);
+}
+
+.mileageInput {
+    display: flex;
+    align-items: center;
+    height: 44px;
+    background-color: var(--white);
+}
+
+.mileageInputFrom {
+    width: 160px;
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
+    border-right: 1px solid var(--gray-light);
+}
+
+.mileageInputTo {
+    width: 160px;
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+}
+
+.mileageInputFrom,
+.mileageInputTo {
+    flex: 1;
+}
+
+.inputPrefix {
+    font-weight: 500;
+    font-size: 16px;
+    padding-left: 24px;
+    margin-right: 4px;
+    line-height: 1.25;
+    color: var(--main);
+}
+
+.input {
+    width: 100%;
+    height: 100%;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.25;
+    border: none;
+    padding: 12px 24px 12px 4px;
+    color: var(--main);
+    background-color: transparent;
+    outline: none;
+}
+
+.actions {
+    display: flex;
+    flex-shrink: 0;
+    gap: 12px;
+    width: 100%;
+}
+
+.searchBtn,
+.resetBtn {
+    flex: 1;
+    height: 44px;
+    font-weight: 600;
+    font-size: 16px;
+    border-radius: 12px;
+    transition: 250ms;
+}
+
+.searchBtn {
+    border: none;
+    color: var(--white);
+    background-color: var(--light-blue);
+}
+
+.searchBtn:hover {
+    background-color: var(--dark-blue);
+}
+
+.resetBtn {
+    border: 1px solid var(--light-blue);
+    background-color: transparent;
+    color: var(--main);
+}
+
+.resetBtn:hover {
+    border-color: var(--dark-blue);
+    color: var(--dark-blue);
+}
+
+/* TABLET  */
+@media screen and (min-width: 768px) {
+    .form {
+        max-width: 600px;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: flex-end;
+        justify-content: center;
+    }
+
+    .filterBrand {
+        width: 48%;
+    }
+
+    .filterPrice {
+        width: 48%;
+    }
+
+    .filterMileage {
+        width: 100%;
+    }
+
+    .actions {
+        width: auto;
+    }
+
+    .searchBtn,
+    .resetBtn {
+        min-width: 140px;
+    }
+}
+
+/*  DESKTOP  */
+@media screen and (min-width: 1440px) {
+    .form {
+        max-width: 924px;
+        flex-wrap: nowrap;
+        align-items: flex-end;
+        gap: 16px;
+    }
+
+    .filterBrand {
+        width: 204px;
+    }
+
+    .filterPrice {
+        width: 196px;
+    }
+
+    .filterMileage {
+        width: 320px;
+    }
+
+    .searchBtn,
+    .resetBtn {
+        min-width: 156px;
+    }
+}

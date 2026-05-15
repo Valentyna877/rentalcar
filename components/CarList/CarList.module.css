@@ -1,0 +1,18 @@
+.list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 48px 32px;
+    margin-bottom: 80px;
+}
+
+@media (min-width: 768px) {
+    .list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1440px) {
+    .list {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}

@@ -51,7 +51,7 @@ html,
 body {
   margin: 0;
   padding: 0;
-  background-color: var(--white);
+  background-color: var(--bg);
   font-family: var(--font-manrope);
   color: var(--main);
   scroll-behavior: smooth;
