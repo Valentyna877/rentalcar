@@ -35,9 +35,9 @@ export async function getFilters(): Promise<FiltersResponse> {
 export interface BookingRequestPayload {
   name: string;
   email: string;
-  phone: string;
-  dateFrom: string;
-  dateTo: string;
+  comment: string;
+  // dateFrom: string;
+  // dateTo: string;
 }
 
 export async function createBookingRequest(

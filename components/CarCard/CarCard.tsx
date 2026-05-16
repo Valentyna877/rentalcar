@@ -55,7 +55,11 @@ function CarCard({ car }: Props) {
           {car.type} | {mileage} km
         </p>
       </div>
-      <Link href={`/catalog/${car.id}`} className={css.button}>
+      <Link
+        href={`/catalog/${car.id}`}
+        className={css.button}
+        target="_blank"
+        rel="noopener noreferrer">
         Read more
       </Link>
     </li>

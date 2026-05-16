@@ -18,6 +18,7 @@ export interface Car {
   };
   rentalConditions: string[];
   mileage: number;
+  stockNumber: number;
 }
 
 export interface CarsResponse {

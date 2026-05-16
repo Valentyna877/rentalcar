@@ -10,12 +10,14 @@ const manrope = Manrope({
   subsets: ['latin'],
   variable: '--font-manrope',
   display: 'swap',
+  fallback: [],
 });
 
 const inter = Inter({
   subsets: ['latin'],
   variable: '--font-inter',
   display: 'swap',
+  fallback: [],
 });
 
 export const metadata: Metadata = {

@@ -1,0 +1,203 @@
+.booking {
+    width: 100%;
+    max-width: 640px;
+    border: 1px solid var(--gray-light);
+    border-radius: 16px;
+    padding: 20px;
+    background: var(--white);
+}
+
+.title {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 8px;
+}
+
+.subtitle {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.25;
+    color: var(--gray);
+    margin-bottom: 16px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.fieldWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.input,
+.textarea {
+    width: 100%;
+    box-sizing: border-box;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.25;
+    color: var(--main);
+    border: none;
+    border-radius: 12px;
+    background-color: var(--inputs);
+    padding: 10px 16px;
+}
+
+.input {
+    height: 44px;
+}
+
+.textarea {
+    min-height: 72px;
+    resize: none;
+    font-family: inherit;
+}
+
+.input::placeholder,
+.textarea::placeholder {
+    color: var(--gray);
+}
+
+.input:hover,
+.textarea:hover,
+.input:focus,
+.textarea:focus {
+    outline: 1px solid var(--light-blue);
+}
+
+.button {
+    width: 100%;
+    margin-top: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+    min-height: 44px;
+    border: none;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 16px;
+    color: var(--white);
+    background-color: var(--light-blue);
+    transition: background-color 250ms ease;
+}
+
+.button:hover,
+.button:focus {
+    background-color: var(--dark-blue);
+}
+
+.error {
+    font-size: 12px;
+    line-height: 1.33;
+    padding-left: 4px;
+    color: #a83c34;
+}
+
+/* DATEPICKER */
+
+.calendar {
+    border: 1px solid var(--light-blue) !important;
+    border-radius: 12px !important;
+    padding: 2px !important;
+    font-family: inherit !important;
+}
+
+.calendar :global(.react-datepicker__header) {
+    background-color: var(--white);
+    border-bottom: none;
+}
+
+.calendar :global(.react-datepicker__current-month) {
+    color: var(--main);
+}
+
+.calendar :global(.react-datepicker__day-name) {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--gray);
+    text-transform: uppercase;
+    margin: 0 4px;
+}
+
+.calendar :global(.react-datepicker__day) {
+    border-radius: 50%;
+    transition: background-color 250ms ease;
+}
+
+.calendar :global(.react-datepicker__day-names) {
+    margin-bottom: 8px;
+    border-bottom: 1px solid var(--light-blue);
+}
+
+.calendar :global(.react-datepicker__day--selected),
+.calendar :global(.react-datepicker__day--keyboard-selected) {
+    background-color: var(--light-blue);
+    color: var(--white);
+}
+
+.calendar :global(.react-datepicker__day:hover) {
+    background-color: var(--gray-light);
+}
+
+.calendar :global(.react-datepicker__navigation-icon::before) {
+    height: 12px;
+    width: 12px;
+    top: 12px;
+    border-color: var(--light-blue);
+}
+
+.popper {
+    z-index: 20;
+}
+
+/* TABLET */
+@media screen and (min-width: 768px) {
+    .booking {
+        padding: 24px;
+    }
+
+    .title {
+        font-size: 20px;
+    }
+
+    .subtitle {
+        font-size: 16px;
+    }
+
+    .input,
+    .textarea {
+        font-size: 16px;
+        padding: 12px 20px;
+    }
+
+    .input {
+        height: 48px;
+    }
+
+    .textarea {
+        min-height: 88px;
+    }
+
+    .button {
+        width: 576px;
+        padding: 12px 40px;
+        align-self: center;
+    }
+}
+
+/* DESKTOP */
+@media screen and (min-width: 1440px) {
+    .booking {
+        padding: 32px;
+    }
+
+    .button {
+        padding: 12px 51px;
+    }
+}
