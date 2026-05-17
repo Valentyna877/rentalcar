@@ -20,7 +20,10 @@ useEffect(() => {
     const isActive = (path: string) => {
     if (path === "/") {
     return pathname === "/";
-  }
+      }
+      if (path === "/catalog") {
+        return pathname === "/catalog";
+      }
   return pathname.startsWith(path);
 };
 
@@ -70,7 +73,7 @@ useEffect(() => {
               <li>
                 <Link
                   href="/catalog"
-                  aria-current={pathname.startsWith('/catalog') ? 'page' : undefined}
+                  aria-current={pathname === '/catalog' ? 'page' : undefined}
                   className={`${css.listNavItem} ${isActive('/catalog') ? css.active : ''}`}
                   onClick={() => setMenuOpen(false)}
                 >

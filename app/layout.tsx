@@ -56,7 +56,7 @@ export default function RootLayout({
           <main>{children}</main>
           <Toaster position="top-right" />
           {process.env.NODE_ENV === "development" && (
-            <ReactQueryDevtools initialIsOpen={false} />
+          <ReactQueryDevtools initialIsOpen={false} />
           )}
         </TanStackProvider>
       </body>

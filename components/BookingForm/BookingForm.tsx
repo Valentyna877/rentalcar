@@ -5,15 +5,21 @@ import 'react-datepicker/dist/react-datepicker.css';
 import css from './BookingForm.module.css';
 import * as Yup from 'yup';
 import DatePicker from 'react-datepicker';
-import { registerLocale } from 'react-datepicker';
+import { registerLocale } from 'react-datepicker'; 
 import { enGB } from 'date-fns/locale';
 import toast from 'react-hot-toast';
-import { createBookingRequest } from '@/lib/api/clientApi';
+import { BookingRequestPayload, createBookingRequest } from '@/lib/api/clientApi';
 
 registerLocale('enGB', enGB);
 
+const ReadOnlyInput = (props: React.InputHTMLAttributes<HTMLInputElement>) => (
+  <input {...props} readOnly className={css.input} />
+);
+
 interface BookingFormProps {
   carId: string;
+  carBrand: string;
+  carModel: string;
 }
 
 interface BookingFormValues {
@@ -25,8 +31,8 @@ interface BookingFormValues {
 const BookingFormSchema = Yup.object({
   name: Yup.string().trim().min(2).max(50).required('Name is required'),
   email: Yup.string().trim().email('Enter a valid email').required('Email is required'),
-  date: Yup.date().required('Booking date is required'),
-  comment: Yup.string().trim().max(500).required('Leave a comment please.'),
+  date: Yup.date().nullable(),
+  comment: Yup.string().trim().max(500),
 });
 
 const initialValues: BookingFormValues = {
@@ -35,7 +41,7 @@ const initialValues: BookingFormValues = {
   comment: '',
 };
 
-function BookingForm({ carId }: BookingFormProps) {
+function BookingForm({ carId, carBrand, carModel }: BookingFormProps) {
   const [values, setValues] = useState(initialValues);
   const [selectedDate, setSelectedDate] = useState<Date | null>(null);
   const [errors, setErrors] = useState<Record<string, string>>({});
@@ -58,15 +64,25 @@ function BookingForm({ carId }: BookingFormProps) {
 
       setIsSubmitting(true);
 
-      await createBookingRequest(carId, {
+      const payload: BookingRequestPayload = {
         name: values.name,
         email: values.email,
-        comment: values.comment,
+        // comment: values.comment,
         // dateFrom: selectedDate?.toISOString() ?? '',
         // dateTo: selectedDate?.toISOString() ?? '',
-      });
+      };
 
-      toast.success(`Booking request sent for ${selectedDate?.toLocaleDateString('uk-UA')}`);
+      if (values.comment.trim()) {
+        payload.comment = values.comment.trim();
+      }
+
+      await createBookingRequest(carId, payload);
+
+      if (selectedDate) {
+        toast.success(`Booking request for ${carBrand} ${carModel} for ${selectedDate?.toLocaleDateString('uk-UA')} accepted. We will contact you at ${values.email}.`);
+      } else {
+        toast.success(`Booking request for ${carBrand} ${carModel} accepted. We will contact you at ${values.email}.`);
+      }
 
       setValues(initialValues);
       setSelectedDate(null);
@@ -90,6 +106,7 @@ function BookingForm({ carId }: BookingFormProps) {
         <h2 className={css.title}>Book your car now</h2>
          <p className={css.subtitle}>Stay connected! We are always ready to help you.</p>
       <form onSubmit={handleSubmit} className={css.form}>
+        <div className={css.fieldWrapper}>
         <input
           type="text"
           name="name"
@@ -98,8 +115,9 @@ function BookingForm({ carId }: BookingFormProps) {
           placeholder="Name*"
           className={css.input}
         />
-        {errors.name && <span className={css.error}>{errors.name}</span>}
-
+          {errors.name && <span className={css.error}>{errors.name}</span>}
+          </div>
+        <div className={css.fieldWrapper}>
         <input
           type="email"
           name="email"
@@ -108,24 +126,33 @@ function BookingForm({ carId }: BookingFormProps) {
           placeholder="Email*"
           className={css.input}
         />
-        {errors.email && <span className={css.error}>{errors.email}</span>}
+          {errors.email && <span className={css.error}>{errors.email}</span>}
+        </div>
 
+         <div className={css.calendarWrapper}>
         <DatePicker
           selected={selectedDate}
           onChange={(date: Date | null) => setSelectedDate(date)}
-          placeholderText="Booking date*"
+          placeholderText="Booking date"
           className={css.input}
+          wrapperClassName={css.calendarWrapper}
           minDate={new Date()}
-          dateFormat="yyyy-MM-dd"
+          // dateFormat="yyyy-MM-dd"
+          dateFormat="dd.MM.yyyy"
           locale="enGB"
+          calendarClassName={css.calendar}
+          popperClassName={css.popper}
+          fixedHeight
+          customInput={<ReadOnlyInput/>}
         />
-        {errors.date && <span className={css.error}>{errors.date}</span>}
+        {errors.date && <span className={css.error}>{errors.date}</span>}     
+          </div>
 
         <textarea
           name="comment"
           value={values.comment}
           onChange={handleChange}
-          placeholder="Comment*"
+          placeholder="Comment"
           className={css.textarea}
           rows={3}
         />

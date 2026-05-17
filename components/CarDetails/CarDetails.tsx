@@ -28,7 +28,10 @@ function CarDetails({ car }: CarDetailsProps) {
                 priority
               />
             </div>
-            <BookingForm carId={car.id}/>
+           <BookingForm
+             carId={car.id}
+             carBrand={car.brand}
+             carModel={car.model} />
           </div>
           <div className={css.right}>
            <div className={css.head}>
@@ -61,7 +64,7 @@ function CarDetails({ car }: CarDetailsProps) {
                 ))}
               </ul>
            </div>
-           
+
            <div className={css.divider}></div>
 
             <div className={css.block}>
