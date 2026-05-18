@@ -55,7 +55,6 @@ export default function CarFilters({ brands, prices, onSearch }: FiltersProps) {
 
   const handleReset = () => {
     resetFilters();
-    onSearch();
   };
 
   return (
