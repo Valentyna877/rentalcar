@@ -1,79 +1,80 @@
-🚗 RentalCar – Car Rental Platform
-Live Demo: https://rentalcar-theta.vercel.app
+# 🚗 RentalCar - Car Rental Service
 
-📖 Description
-RentalCar is a modern frontend web application for a car rental company. It provides users with a seamless experience to browse available vehicles, apply advanced filters, and view detailed specifications before booking.
+[![Live Demo](https://img.shields.io/badge/Live-Demo-brightgreen.svg)](https://rentalcar-theta.vercel.app/)
 
-The project is built with Next.js (App Router) and TypeScript, focusing on performance, SEO, and smooth user experience.
+### 📖 Description
 
-✨ Main Features
-Home Page: Engaging hero section with a clear call-to-action.
+RentalCar is a modern frontend web application designed for a car rental company. It provides users with a seamless experience to browse a catalog of available vehicles, apply advanced filters, and view detailed specifications for each car before booking.
 
-Interactive Catalog: Dynamic list of cars fetched from a REST API.
+The project is built with **Next.js (App Router)** and **TypeScript**, focusing on performance, SEO, and a smooth user experience.
 
-Advanced Filtering: Filter cars by:
+## ✨ Main Features
 
-Brand (single selection)
+- **Home Page**: Engaging hero section with a clear call-to-action to start browsing.
+- **Interactive Catalog**: A dynamic list of cars fetched from a REST API.
+- **Advanced Filtering**: Users can filter the catalog by:
+  - Brand (single selection)
+  - Price (single selection)
+  - Mileage (min and max values)
+- **"Load More" Pagination**: Efficient data fetching using TanStack Query's `useInfiniteQuery` to load additional cars while keeping active filters applied.
+- **Dynamic Car Details**: Dedicated pages for each vehicle (`/catalog/[carId]`) with high-quality images, specifications, rental conditions, and a functional rental form.
+- **SEO Optimization**: Dynamically generated metadata and OpenGraph tags for individual car pages.
 
-Price (single selection)
+## 🛠️ Tech Stack
 
-Mileage (min/max values)
+- **Framework:** [Next.js](https://nextjs.org/) (App Router)
+- **Language:** [TypeScript](https://www.typescriptlang.org/)
+- **State Management / Data Fetching:** [TanStack Query](https://tanstack.com/query/latest) (React Query)
+- **Styling:** CSS Modules
+- **Icons:** SVG Sprite
 
-"Load More" Pagination: Efficient data fetching with TanStack Query’s useInfiniteQuery.
+## 🚀 Installation and Usage
 
-Dynamic Car Details: Dedicated pages /catalog/[carId] with high-quality images, specifications, rental conditions, and booking form.
+To run this project locally, follow these steps:
 
-SEO Optimization: Dynamically generated metadata and OpenGraph tags for each car page.
+### Prerequisites
 
-🛠️ Tech Stack
-Framework: Next.js (App Router)
+Make sure you have [Node.js](https://nodejs.org/) installed on your machine.
 
-Language: TypeScript
+### 1. Clone the repository
 
-State Management / Data Fetching: TanStack Query (React Query)
+```bash
+git clone [https://github.com/](https://github.com/)[TeaRediT]/[rental-car].git
+```
 
-Styling: CSS Modules
+### 2. Navigate to the project directory
 
-Icons: SVG Sprite
+cd [rental-car]
 
-🚀 Installation and Usage
-Prerequisites
-Make sure you have Node.js installed.
+### 3. Install dependencies
 
-Steps
-Clone the repository:
-
-bash
-git clone https://github.com/<your-username>/rental-car.git
-Navigate to the project directory:
-
-bash
-cd rental-car
-Install dependencies:
-
-bash
 npm install
 
-# or
+or
 
 yarn install
-Create a .env file in the root and add your API endpoint:
 
-Код
-NEXT_PUBLIC_API_URL=https://car-rental-api.goit.study
-Start the development server:
+### 4. Setup Environment Variables
 
-bash
+Create a .env file in the root of your project and add your API endpoint:
+
+NEXT_PUBLIC_API_URL=[https://car-rental-api.goit.study](https://car-rental-api.goit.study)
+
+### 5. Start the development server
+
 npm run dev
 
-# or
+or
 
 yarn dev
-Open http://localhost:3000 in your browser.
+
+Open http://localhost:3000 in your browser to see the result.
 
 👤 Author
 Valentyna
 
 GitHub: [@Valentyna877](https://github.com/Valentyna877)
 
-LinkedIn: [Valentyna Shpakivska-Aydemir] (https://www.linkedin.com/in/valentyna-shpakivska-aydemir/)
+LinkedIn: [Valentyna Shpakivska-Aydemir](https://www.linkedin.com/in/valentyna-shpakivska-aydemir/)
+
+This project was created as a test assignment.
