@@ -16,6 +16,7 @@ interface SelectProps {
   onChange: (value: string) => void;
   className?: string;
   formatOptionLabel?: (option: Option, meta: { context: 'menu' | 'value' }) => React.ReactNode;
+  isDisabled?: boolean;
 }
 
 const DropdownIndicator = (props: DropdownIndicatorProps<Option, false>) => {
@@ -41,6 +42,7 @@ export default function CustomSelect({
   onChange,
   className = '',
   formatOptionLabel,
+  isDisabled,
 }: SelectProps) {
   const selectedOption = options.find((o) => o.value === value) || null;
 
@@ -116,7 +118,7 @@ export default function CustomSelect({
       }),
         menuList: (base) => ({
       ...base,
-      maxHeight: 272,
+      Height: 272,
       overflowY: 'auto',
       padding: '14px 8px 14px 0',
       scrollbarWidth: 'thin',
@@ -168,6 +170,8 @@ export default function CustomSelect({
       value={selectedOption}
       onChange={handleChange}
       isSearchable={false}
+      isClearable={true}
+      isDisabled={isDisabled}
       components={{ DropdownIndicator }}
       formatOptionLabel={formatOptionLabel}
     />
