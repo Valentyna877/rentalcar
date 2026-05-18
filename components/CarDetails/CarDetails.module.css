@@ -38,6 +38,10 @@
     display: block;
     width: 100%;
     height: auto;
+    transition: transform 500ms ease-in-out;
+}
+
+.img:hover {
     transform: scale(1.1);
 }
 

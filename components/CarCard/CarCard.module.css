@@ -2,6 +2,11 @@
     display: flex;
     flex-direction: column;
     gap: 16px;
+    transition: transform 500ms ease-in-out;
+}
+
+.card:hover {
+    transform: scale(1.02);
 }
 
 .imageWrapper {
@@ -29,7 +34,7 @@
 .topRow {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: baseline;
     margin-bottom: 8px;
     gap: 8px;
 }
@@ -70,7 +75,7 @@
     fill: var(--white);
     width: 16px;
     height: 16px;
-    transition: fill 250ms ease;
+    transition: fill 500ms ease;
 }
 
 .favoriteBtn:hover .iconFavorite {

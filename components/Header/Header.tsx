@@ -34,8 +34,7 @@ useEffect(() => {
           <Link className={css.logo} href="/">
             <svg
               className={css.logoIcon}
-              width="104"
-              height="16"
+              width="104" viewBox="0 0 204 32"
             >
               <use href="/sprite.svg#icon-rental-car" />
             </svg>
