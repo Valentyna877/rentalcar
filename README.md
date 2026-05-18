@@ -1,36 +1,79 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+🚗 RentalCar – Car Rental Platform
+Live Demo: https://rentalcar-theta.vercel.app
 
-## Getting Started
+📖 Description
+RentalCar is a modern frontend web application for a car rental company. It provides users with a seamless experience to browse available vehicles, apply advanced filters, and view detailed specifications before booking.
 
-First, run the development server:
+The project is built with Next.js (App Router) and TypeScript, focusing on performance, SEO, and smooth user experience.
 
-```bash
+✨ Main Features
+Home Page: Engaging hero section with a clear call-to-action.
+
+Interactive Catalog: Dynamic list of cars fetched from a REST API.
+
+Advanced Filtering: Filter cars by:
+
+Brand (single selection)
+
+Price (single selection)
+
+Mileage (min/max values)
+
+"Load More" Pagination: Efficient data fetching with TanStack Query’s useInfiniteQuery.
+
+Dynamic Car Details: Dedicated pages /catalog/[carId] with high-quality images, specifications, rental conditions, and booking form.
+
+SEO Optimization: Dynamically generated metadata and OpenGraph tags for each car page.
+
+🛠️ Tech Stack
+Framework: Next.js (App Router)
+
+Language: TypeScript
+
+State Management / Data Fetching: TanStack Query (React Query)
+
+Styling: CSS Modules
+
+Icons: SVG Sprite
+
+🚀 Installation and Usage
+Prerequisites
+Make sure you have Node.js installed.
+
+Steps
+Clone the repository:
+
+bash
+git clone https://github.com/<your-username>/rental-car.git
+Navigate to the project directory:
+
+bash
+cd rental-car
+Install dependencies:
+
+bash
+npm install
+
+# or
+
+yarn install
+Create a .env file in the root and add your API endpoint:
+
+Код
+NEXT_PUBLIC_API_URL=https://car-rental-api.goit.study
+Start the development server:
+
+bash
 npm run dev
+
 # or
+
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Open http://localhost:3000 in your browser.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+👤 Author
+Valentyna
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+GitHub: [@Valentyna877](https://github.com/Valentyna877)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+LinkedIn: [Valentyna Shpakivska-Aydemir] (https://www.linkedin.com/in/valentyna-shpakivska-aydemir/)
