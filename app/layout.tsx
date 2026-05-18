@@ -21,7 +21,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://.vercel.app'),
+  metadataBase: new URL('https://rentalcar-theta.vercel.app'),
 
   title: 'RentalCar | Car Rental Service',
   description: 'A platform for renting cars with ease and convenience',
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'RentalCar | Car Rental Service',
     description: 'A platform for renting cars with ease and convenience',
-    url: 'https://.vercel.app',
+    url: 'https://rentalcar-theta.vercel.app',
     images: [
       {
         url: '/images/hero.webp',
