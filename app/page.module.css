@@ -56,7 +56,6 @@
     background-color: var(--dark-blue);
 }
 
-/* tablet */
 @media (min-width: 768px) {
     .main {
         min-height: calc(100vh - 73px);
@@ -78,7 +77,6 @@
     }
 }
 
-/* desktop */
 @media (min-width: 1440px) {
     .main {
         align-items: flex-end;

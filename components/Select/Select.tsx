@@ -100,7 +100,7 @@ export default function CustomSelect({
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
-      transition: 'transform 250ms ease',
+      transition: 'transform 500ms ease',
       transform: state.selectProps.menuIsOpen ? 'rotate(180deg)' : 'rotate(0deg)',
       color: 'var(--dark)',
     }),
@@ -118,29 +118,23 @@ export default function CustomSelect({
       }),
         menuList: (base) => ({
       ...base,
-      Height: 272,
+      maxHeight: 272,
       overflowY: 'auto',
       padding: '14px 8px 14px 0',
-      scrollbarWidth: 'thin',
-      scrollbarColor: 'var(--light-blue) transparent',
-     '&::-webkit-scrollbar': {
-     width: '8px',
-  },
-  '&::-webkit-scrollbar-track': {
-    background: 'transparent',
-  },
-  '&::-webkit-scrollbar-thumb': {
+      '&::-webkit-scrollbar': {
+       backgroundColor: 'transparent'
+     },
+     '&::-webkit-scrollbar-track': {
+      backgroundColor: 'transparent',
+    },
+    '&::-webkit-scrollbar-thumb': {
     backgroundColor: 'var(--light-blue)',
     borderRadius: '10px',
-  },
-  '&::-webkit-scrollbar-thumb:hover': {
+    width: '8px',
+   },
+   '&::-webkit-scrollbar-thumb:hover': {
     backgroundColor: 'var(--dark-blue)',
-  },
-    '&::-webkit-scrollbar-button:single-button': {
-    display: 'none',
-    width: 0,
-    height: 0,
-  },
+   },
     }),
     option: (base, state) => ({
       ...base,

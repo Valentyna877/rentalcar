@@ -48,8 +48,14 @@ function CatalogClient() {
 
       if (submittedFilters.brand) params.brand = submittedFilters.brand;
       if (submittedFilters.rentalPrice) { params.price = Number(submittedFilters.rentalPrice); }
-      if (submittedFilters.minMileage !== undefined) params.minMileage = submittedFilters.minMileage;
-      if (submittedFilters.maxMileage !== undefined) params.maxMileage = submittedFilters.maxMileage;
+      if (submittedFilters.maxMileage !== undefined) {
+      params.maxMileage = submittedFilters.maxMileage;
+      params.minMileage = submittedFilters.minMileage ?? 0; 
+    } else if (submittedFilters.minMileage !== undefined) {
+      params.minMileage = submittedFilters.minMileage;
+    }
+      // if (submittedFilters.minMileage !== undefined) params.minMileage = submittedFilters.minMileage;
+      // if (submittedFilters.maxMileage !== undefined) params.maxMileage = submittedFilters.maxMileage;
 
       return getCars(params);
     },
