@@ -116,8 +116,8 @@ img {
   padding: 0 20px;
   min-width: 320px;
   max-width: 375px;
-  position: relative;
-  z-index: 1;
+  /* position: relative;
+  z-index: 1; */
 }
 
 .errorWrapper {
