@@ -14,9 +14,9 @@ The project is built with **Next.js (App Router)** and **TypeScript**, focusing 
 </p>
 
 <p align="center">
-   [![Live Demo](https://img.shields.io/badge/Live-Demo-brightgreen.svg)](https://rentalcar-theta.vercel.app/)
-  <!-- <a href="https://rentalcar-theta.vercel.app/">🌐 Live Demo</a> •
-  <a href="https://github.com/Valentyna877/rentalcar">📁 GitHub Repository</a> -->
+  <!-- [![Live Demo](https://img.shields.io/badge/Live-Demo-brightgreen.svg)](https://rentalcar-theta.vercel.app/) -->
+  <a href="https://rentalcar-theta.vercel.app/">🌐 Live Demo</a> •
+  <a href="https://github.com/Valentyna877/rentalcar">📁 GitHub Repository</a>
 </p>
 
 ---
