@@ -136,7 +136,7 @@ export default function CarFilters({ brands, prices, onSearch }: FiltersProps) {
           Search
         </button>
 
-        <button className={css.resetBtn} type="button" onClick={handleReset} aria-label="Clear filters">
+        <button className={css.resetBtn} onClick={handleReset} aria-label="Clear filters" >
           Reset
         </button>
       </div>

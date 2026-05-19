@@ -91,7 +91,7 @@
     font-weight: 600;
     font-size: 16px;
     border-radius: 12px;
-    transition: background-color 500ms ease;
+    transition: background-color color 500ms ease;
 }
 
 .searchBtn {
