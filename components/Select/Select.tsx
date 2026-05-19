@@ -10,6 +10,7 @@ interface Option {
 
 interface SelectProps {
   id?: string;
+  inputId?: string
   value: string;
   placeholder: string;
   options: Option[];
@@ -51,7 +52,7 @@ export default function CustomSelect({
   };
 
   const customStyles: StylesConfig<Option, false> = {
-    control: (base, state) => ({
+    control: (base) => ({
       ...base,
       display: 'flex',
       alignItems: 'center',
@@ -157,6 +158,7 @@ export default function CustomSelect({
   return (
     <Select
       instanceId={id}
+      inputId={id} 
       className={className}
       options={options}
       placeholder={placeholder}
@@ -168,6 +170,7 @@ export default function CustomSelect({
       isDisabled={isDisabled}
       components={{ DropdownIndicator }}
       formatOptionLabel={formatOptionLabel}
+      aria-label={placeholder}
     />
   );
 }

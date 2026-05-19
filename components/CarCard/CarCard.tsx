@@ -23,7 +23,7 @@ function CarCard({ car }: Props) {
         <Image
           className={css.carImage}
           src={car.img}
-          alt={`${car.brand} ${car.model}`}
+          alt={`${car.brand} ${car.model} year ${car.year}`}
           width={276}
           height={268}
         />
@@ -31,8 +31,12 @@ function CarCard({ car }: Props) {
           onClick={() => toggleFavorite(String(car.id))}
           className={css.favoriteBtn}
           type="button"
+          aria-pressed={isFavorite}
+          aria-label={isFavorite ? "Remove from favorites" : "Add to favorites"}
         >
-          <svg className={`${css.iconFavorite} ${isFavorite ? css.activeFavorite : ''}`}>
+          <svg className={`${css.iconFavorite} ${isFavorite ? css.activeFavorite : ''}`}
+            role="img"
+            aria-hidden="true">
             <use href={isFavorite ? '/sprite.svg#icon-active-heart' : '/sprite.svg#icon-default-heart'} />
           </svg>
         </button>
@@ -59,7 +63,9 @@ function CarCard({ car }: Props) {
         href={`/catalog/${car.id}`}
         className={css.button}
         target="_blank"
-        rel="noopener noreferrer">
+        rel="noopener noreferrer"
+        aria-label={`Read more details about ${car.brand} ${car.model}, year ${car.year}`}
+      >
         Read more
       </Link>
     </li>

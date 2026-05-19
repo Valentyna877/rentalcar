@@ -17,11 +17,18 @@
     border-radius: 12px;
     background-color: transparent;
     color: var(--main);
+    transition: background-color color 500ms ease;
 }
 
 .paginationButton:hover,
 .paginationButton:focus {
     border-color: var(--dark-blue);
+    color: var(--dark-blue);
+}
+
+.paginationButton:hover:not(:disabled) {
+        border-color: var(--dark-blue);
+            color: var(--dark-blue);
 }
 
 .paginationButton:disabled {

@@ -34,8 +34,12 @@ useEffect(() => {
           <Link className={css.logo} href="/">
             <svg
               className={css.logoIcon}
-              width="104" viewBox="0 0 204 32"
+              width="104"
+              viewBox="0 0 204 32"
+              role="img"
+              aria-labelledby="logoTitle"
             >
+              <title id="logoTitle">RentalCar Logo</title>
               <use href="/sprite.svg#icon-rental-car" />
             </svg>
           </Link>

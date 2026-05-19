@@ -52,7 +52,6 @@
 .title {
     display: flex;
     flex-wrap: wrap;
-    /* gap: 12px; */
     margin-bottom: 8px;
     font-weight: 600;
     font-size: 20px;

@@ -30,7 +30,7 @@ interface BookingFormValues {
 
 const BookingFormSchema = Yup.object({
   name: Yup.string().trim().min(2).max(50).required('Name is required'),
-  email: Yup.string().trim().email('Enter a valid email').required('Email is required'),
+  email: Yup.string().trim().matches(/^[^\s@]+@[^\s@]+\.[^\s@]+$/, "Invalid email").email('Enter a valid email').required('Email is required'),
   date: Yup.date().nullable(),
   comment: Yup.string().trim().max(500),
 });
@@ -114,6 +114,7 @@ function BookingForm({ carId, carBrand, carModel }: BookingFormProps) {
           onChange={handleChange}
           placeholder="Name*"
           className={css.input}
+          aria-invalid={errors.name ? "true" : "false"}
         />
           {errors.name && <span className={css.error}>{errors.name}</span>}
           </div>
@@ -125,6 +126,7 @@ function BookingForm({ carId, carBrand, carModel }: BookingFormProps) {
           onChange={handleChange}
           placeholder="Email*"
           className={css.input}
+          aria-invalid={errors.email ? "true" : "false"}
         />
           {errors.email && <span className={css.error}>{errors.email}</span>}
         </div>
@@ -137,7 +139,6 @@ function BookingForm({ carId, carBrand, carModel }: BookingFormProps) {
           className={css.input}
           wrapperClassName={css.calendarWrapper}
           minDate={new Date()}
-          // dateFormat="yyyy-MM-dd"
           dateFormat="dd.MM.yyyy"
           locale="enGB"
           calendarClassName={css.calendar}
@@ -155,6 +156,7 @@ function BookingForm({ carId, carBrand, carModel }: BookingFormProps) {
           placeholder="Comment"
           className={css.textarea}
           rows={3}
+          aria-invalid={errors.comment ? "true" : "false"}
         />
         {errors.comment && <span className={css.error}>{errors.comment}</span>}
 

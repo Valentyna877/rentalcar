@@ -1,12 +1,25 @@
-# 🚗 RentalCar - Car Rental Service
+<h1 align="center">🚗 Car Rental App</h1>
+<p align="center">A modern web application for browsing, filtering and booking rental cars</p>
 
-[![Live Demo](https://img.shields.io/badge/Live-Demo-brightgreen.svg)](https://rentalcar-theta.vercel.app/)
-
-### 📖 Description
+### 📌 Description
 
 RentalCar is a modern frontend web application designed for a car rental company. It provides users with a seamless experience to browse a catalog of available vehicles, apply advanced filters, and view detailed specifications for each car before booking.
 
 The project is built with **Next.js (App Router)** and **TypeScript**, focusing on performance, SEO, and a smooth user experience.
+
+## 🔗 Preview
+
+<p align="center">
+  <img src="./public/images/readme.webp" alt="RentalCar Preview" width="700"/>
+</p>
+
+<p align="center">
+   [![Live Demo](https://img.shields.io/badge/Live-Demo-brightgreen.svg)](https://rentalcar-theta.vercel.app/)
+  <!-- <a href="https://rentalcar-theta.vercel.app/">🌐 Live Demo</a> •
+  <a href="https://github.com/Valentyna877/rentalcar">📁 GitHub Repository</a> -->
+</p>
+
+---
 
 ## ✨ Main Features
 
@@ -25,6 +38,10 @@ The project is built with **Next.js (App Router)** and **TypeScript**, focusing 
 - **Framework:** [Next.js](https://nextjs.org/) (App Router)
 - **Language:** [TypeScript](https://www.typescriptlang.org/)
 - **State Management / Data Fetching:** [TanStack Query](https://tanstack.com/query/latest) (React Query)
+- **Axios**
+- **Zustand**
+- **Yup**
+- **React DatePicker**
 - **Styling:** CSS Modules
 - **Icons:** SVG Sprite
 
@@ -71,7 +88,7 @@ yarn dev
 Open http://localhost:3000 in your browser to see the result.
 
 👤 Author
-Valentyna
+FullStack Developer Valentyna
 
 GitHub: [@Valentyna877](https://github.com/Valentyna877)
 

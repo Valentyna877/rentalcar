@@ -73,6 +73,8 @@ export default function CarFilters({ brands, prices, onSearch }: FiltersProps) {
 
         <Select
           id="brand"
+          inputId="brand" 
+          aria-label="Select car brand"
           value={filters.brand}
           placeholder="Choose a brand"
           options={brandOptions}
@@ -87,6 +89,8 @@ export default function CarFilters({ brands, prices, onSearch }: FiltersProps) {
 
         <Select
           id="price"
+          inputId="price"
+          aria-label="Select rental price per hour"
           value={filters.rentalPrice ?? ''}
           placeholder="Choose a price"
           options={priceOptions}
@@ -110,6 +114,7 @@ export default function CarFilters({ brands, prices, onSearch }: FiltersProps) {
               type="text"
               value={formatMileage(filters.minMileage)}
               onChange={(e) => handleMileageChange('minMileage', e.target.value)}
+              aria-label="Minimum mileage"
             />
           </label>
 
@@ -120,17 +125,18 @@ export default function CarFilters({ brands, prices, onSearch }: FiltersProps) {
               type="text"
               value={formatMileage(filters.maxMileage)}
               onChange={(e) => handleMileageChange('maxMileage', e.target.value)}
+              aria-label="Maximum mileage"
             />
           </label>
         </div>
       </div>
 
       <div className={css.actions}>
-        <button className={css.searchBtn} type="submit">
+        <button className={css.searchBtn} type="submit" aria-label="Search cars">
           Search
         </button>
 
-        <button className={css.resetBtn} type="button" onClick={handleReset}>
+        <button className={css.resetBtn} type="button" onClick={handleReset} aria-label="Clear filters">
           Reset
         </button>
       </div>
